@@ -16,9 +16,7 @@ def main(*args):
     # Actualizamos el interface de usuario de la Toolbox
     process.updateToolbox()
     
-class CountDuplicates(ToolboxProcess):
-    """Tabla con campo direccion a shape file"""
-    
+class CountDuplicates(ToolboxProcess):    
     def defineCharacteristics(self):
       i18nManager = ToolsLocator.getI18nManager()
       self.setName(i18nManager.getTranslation("_Count_features_with_duplicates_field"))
@@ -42,13 +40,19 @@ class CountDuplicates(ToolboxProcess):
           return False
           
       count = dict()
+      self.setRangeOfValues(0, features.getSize())
+      #self.getStatus().setTitle("Processing..")
+      self.setProgressText(i18nManager.getTranslation("_Counting_features"))
       for f in features:
           ff = str(f.get(field))
           if ff in count.keys():
               count[ff] += 1
           else:
               count[ff] = 1
-
+          if self.isCanceled() is True:
+            return False
+          else:
+            self.next()
       sch = gvsig.createFeatureType()
       sch.append('ID','STRING',15)
       sch.append('COUNT','INTEGER',20)
