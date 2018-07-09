@@ -1,22 +1,21 @@
 #
-#Mon Jul 09 17:56:06 CEST 2018
+#Mon Jul 09 18:24:59 CEST 2018
 owner=
 code=CountDuplicates
 java-version=j1_7
 official=true
 type=Script
-version=1.0.0-3
+version=1.0.0-4
 state=testing
-application-version=2.4.1-0
 operating-system=all
 dependencies=
-sources-url=https\://github.com/gvSIGAssociation/gvsig-desktop-scripting-CountDuplicates
+sources-url=
 web-url=
 architecture=all
-code-alias=
 model-version=1.0.1
 categories=Geoprocess
 description=Count features with duplicate fields into a table
-owner-url=https\://github.com/gvSIGAssociation/gvsig-desktop-scripting-CountDuplicates
-download-url=https\://github.com/gvSIGAssociation/gvsig-desktop-scripting-CountDuplicates/releases/download/1.0.0-1/gvSIG-desktop-2.4.0-CountDuplicates-1.0.0-1-testing-all-all-j1_7.gvspki
+owner-url=
+buildNumber=4
+gvSIG-version=2.4.1
 name=Count duplicates
